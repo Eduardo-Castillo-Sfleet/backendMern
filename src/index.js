@@ -1,5 +1,9 @@
 const app = require('./app')
+require('./database')
 
-app.listen(4000, () => {
-    console.log('Server ON')
-})
+async function main() {
+    await app.listen(4000);
+    console.log(`Puerto 4000 ON`);
+}
+
+main()
