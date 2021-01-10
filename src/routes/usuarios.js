@@ -1,8 +1,10 @@
 const { Router } = require('express')
 const router = Router()
 
+const { getUsuarios } = require('../controllers/usuarios.controllers')
+
 router.route('/')
-    .get((req, res) => res.json({message: 'get', status: 'ok'}))
+    .get(getUsuarios)
     .post()
     .delete()
 
