@@ -1,8 +1,12 @@
 const { Router } = require('express')
 const router = Router()
 
-const { getPagos } = require('../controllers/pagos.controllers')
+const { getPagos, createPago, deletePago, updatePago } = require('../controllers/pagos.controllers')
 
-router.route('/').get(getPagos)
+router.route('/')
+    .get(getPagos)
+    .post(createPago)
+    .put(updatePago)
+    .delete(deletePago)
 
 module.exports = router;
