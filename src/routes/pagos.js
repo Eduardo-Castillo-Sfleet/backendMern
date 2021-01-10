@@ -1,6 +1,8 @@
 const { Router } = require('express')
 const router = Router()
 
-router.route('/').get((req, res) => res.send('Pagos'))
+const { getPagos } = require('../controllers/pagos.controllers')
+
+router.route('/').get(getPagos)
 
 module.exports = router;
