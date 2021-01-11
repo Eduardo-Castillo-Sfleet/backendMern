@@ -6,11 +6,11 @@ const { getUsuarios, getUsuario, createUsuario, updateUsuario, deleteUsuario } =
 router.route('/')
     .get(getUsuarios)
     .post(createUsuario)
-    .put(updateUsuario)
-    .delete(deleteUsuario)
+   
 
 router.route('/:id')
     .get(getUsuario)
-
+    .put(updateUsuario)
+    .delete(deleteUsuario)
 
 module.exports = router;
