@@ -1,16 +1,22 @@
 const pagosController = {}
 
-pagosController.getPagos = (req, res) => res.json({
-    nombre: 'Armando'
-})
+const Pago = require('../models/Pago')
+
+pagosController.getPagos = async (req, res) => {
+    const pagos = await Pago.find()
+    res.json(pagos)
+}
 
 pagosController.getPago = (req, res) => res.json({
     nombre: 'Pago idividual'
 })
 
-pagosController.createPago = (req, res) => res.json({
-    message: 'creado'
-})
+pagosController.createPago = async (req, res) => {
+    const { titulo, contenido, usuario, monto } = req.body
+    console.log(titulo, contenido, usuario, monto)
+    console.log(req)
+    res.json({message: 'creado'})
+}
 
 pagosController.deletePago  = (req, res) => res.json({
     message: 'eliminado'
