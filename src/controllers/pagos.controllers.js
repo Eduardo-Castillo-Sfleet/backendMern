@@ -8,7 +8,7 @@ pagosController.getPagos = async (req, res) => {
 }
 
 pagosController.getPago = (req, res) => res.json({
-    nombre: 'Pago idividual en otro branch'
+    nombre: 'Ahora si'
 })
 
 pagosController.createPago = async (req, res) => {
